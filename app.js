@@ -1,6 +1,3 @@
-// 4. make bar chart
-// 5. tooltip!
-
 d3.queue()
   .defer(d3.json, "//unpkg.com/world-atlas@1.1.4/world/50m.json")
   .defer(d3.csv, "./data/all_data.csv", function(row) {
@@ -24,7 +21,7 @@ d3.queue()
     var geoData = topojson.feature(mapData, mapData.objects.countries).features;
 
     var width = +d3.select(".chart-container")
-                   .node().offsetWidth;
+                   .node().offsetWidth;               
     var height = 300;
 
     createMap(width, width * 4 / 5);
@@ -102,21 +99,3 @@ function getPercentage(d) {
   var fraction = 100 * angle / (Math.PI * 2);
   return fraction.toFixed(2) + "%";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
